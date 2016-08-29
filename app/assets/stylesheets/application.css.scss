@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require trix
  */
 
 @import 'normalize';
@@ -26,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
 	text-decoration: none;
-	color: inherit;
+	color: #cc0000;
 }
 
 #sidebar {
@@ -35,7 +36,7 @@ a {
 	left: 0;
 	top: 0;
 	height: 100%;
-	background: #f5f7f9;
+	background: #efefef;
 	padding: 7em 0 0 0;
 	border-right: 1px solid #d6dce0;
 	#logo {
@@ -52,7 +53,7 @@ a {
 			font-weight: 700;
 			font-size: 0.7em;
 			text-transform: uppercase;
-			color: #33acb7;
+			color: #cc0000;
 		}
 		li {
 			padding: .5em 0;
@@ -108,7 +109,7 @@ a {
 	#header {
 		padding: 1em 3em;
 		border-bottom: 1px solid #d6dce0;
-		background: #f5f7f9;
+		background: #efefef;
 		color: #9eafba;
 		p {
 			display: inline;
@@ -134,10 +135,10 @@ a {
 			a {
 				font-weight: 500;
 				text-decoration: none;
-				color: #2a2f35;
+				color: #cc0000;
 				font-size: 1.5em;
 				&:hover {
-					color: #33acb7;
+					color: #111111;
 				}
 			}
 		}
