@@ -15,7 +15,8 @@
 		</div>
 		<ul>
 			<li class="category">Web Menu</li>
-			<li><%= link_to "blog", root_path %></li>
+			<li><%= link_to "Blog", root_path %></li>
+			<li><%= link_to "Archives", archives_path %></li>
 			<li><%= link_to "About", about_path %></li>
 			<li><%= link_to "Contact", contact_path %></li>
 		</ul>
@@ -27,13 +28,7 @@
 			<% end %>
 		</ul>
 
-		<ul>
-			<li class="category">Social</li>
-			<li><a href="#">Github</a></li>
-			<li><a href="#">Twitter</a></li>
-			<li><a href="#">Linkedin</a></li>
-			<li><a href="#">Email</a></li>
-		</ul>
+		
 		<% if !user_signed_in? %>
 			<p class="sign_in"><%= link_to "Admin Login", new_user_session_path %></p>
 		<% end %>

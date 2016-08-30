@@ -1,0 +1,19 @@
+<div class="easy-tree" style="float:left;">
+    <% @post_months.sort.reverse.each do |year, postss| %>
+    <ul>
+      <li style="padding: 10px;"><%=h year.strftime("%G")%>
+        <% postss.group_by { |t| t.created_at.beginning_of_month }.each do |month, posts| %>
+        <ul>
+          <li style="padding: 10px;"><%=h month.strftime("%B") %>  
+            <ul>
+            <% for post in posts %>
+              <li style="padding: 10px;" class="getid" name ="<%=post.id%>"><%=h link_to post.title %></li>
+            <% end %>
+                </ul>
+           </li>
+        </ul>
+        <% end %>
+      </li>
+    </ul>
+    <% end %>
+  </div>

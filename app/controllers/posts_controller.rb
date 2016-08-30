@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_action :authenticate_user!, except: [:index, :show]
+	before_action :authenticate_user!, except: [:index, :show, :archives]
 	def index
 		if params[:category].blank?
 			@posts=Post.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 5)
@@ -7,9 +7,13 @@ class PostsController < ApplicationController
 			@category_id = Category.find_by(name: params[:category]).id
 			@posts = Post.where(category_id: @category_id).order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
 		end
+		
 	end
 
-	
+	def archives
+		@posts=Post.all.order('created_at DESC')
+ 		@post_months = @posts.group_by { |t| t.created_at.beginning_of_year }
+	end
 	def new
 		@post=Post.new
 	end
@@ -21,22 +25,18 @@ class PostsController < ApplicationController
 		else
 			render 'new'
 		end
-
-		 
+	 
 
 	end
 
 	def show
 		@post= Post.find(params[:id])
-
-
 		
 	end
 
 	def edit
 		@post = Post.find(params[:id])
 		
-
 	end
 
 	def update
@@ -56,8 +56,11 @@ class PostsController < ApplicationController
 		redirect_to root_path
 	end
 
+	
+		
+	
 	private
 		def post_params
-			params.require(:post).permit(:title, :body, :image, :categories)
+			params.require(:post).permit(:title, :body, :image, :category_id)
 		end 
 end
