@@ -14,7 +14,9 @@
 	<br>
 	<%= f.label :Featured_Image %><br><br>
 	<%= f.file_field :image %><br>
-	<br>
+	<br><br>
+	<%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "Chose a Category"} %>
+	<br><br>
 	<%= f.label :body %><br>
 	<%= f.trix_editor :body %><br>
 	<br>

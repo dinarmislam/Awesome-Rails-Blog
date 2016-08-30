@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'trix'
 gem "paperclip", "~> 5.0.0"
+gem 'sanitize'
 
 gem 'will_paginate'
 # Use jquery as the JavaScript library

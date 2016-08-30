@@ -19,6 +19,14 @@
 			<li><%= link_to "About", about_path %></li>
 			<li><%= link_to "Contact", contact_path %></li>
 		</ul>
+
+		<ul>
+			<li class="category">Category</li>
+			<% Category.all.each do |category| %>
+				<li><%= link_to category.name, posts_path(category: category.name) %></li>
+			<% end %>
+		</ul>
+
 		<ul>
 			<li class="category">Social</li>
 			<li><a href="#">Github</a></li>
@@ -41,6 +49,8 @@
 			<% else %>
 				<%= link_to "Back to All Posts", root_path %>
 		<% end %>
+
+
 		<% if user_signed_in? %>
 				<div class="buttons">
 					<button class="button"><%= link_to "New Post", new_post_path %></button>
