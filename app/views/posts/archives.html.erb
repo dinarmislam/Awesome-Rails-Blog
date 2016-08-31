@@ -7,7 +7,7 @@
           <li style="padding: 10px;"><%=h month.strftime("%B") %>  
             <ul>
             <% for post in posts %>
-              <li style="padding: 10px;" class="getid" name ="<%=post.id%>"><%=h link_to post.title %></li>
+              <li style="padding: 10px;" class="getid" name ="<%=post.id%>"><%=h link_to post.title, post %></li>
             <% end %>
                 </ul>
            </li>
