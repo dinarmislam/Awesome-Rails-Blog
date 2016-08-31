@@ -1,0 +1,32 @@
+
+<div id="page_wrapper">
+<h2>Drop Me a Message</h2>
+<p>
+
+I am here to answer any questions you may have about my combadi experiences. Reach out to me and I'll respond as soon as I can.
+
+Even if there is something you have always wanted to experience and can't find it on combadi, let me know and I promise I'll do my best to find it for you and send you there.
+</p>
+
+<%= form_for @message, url: contact_path do |message_form| %>
+  <fieldset>
+    <div class="field">
+      <%= message_form.text_field :name, placeholder: "Name" %>
+    </div>
+    
+    <div class="field">
+      <%= message_form.email_field :email, placeholder: "Email"%>
+    </div>
+    
+    <div class="field">
+      <%= message_form.text_area :content, placeholder: "Message"%>
+    </div>
+  </fieldset>
+  
+  <fieldset>
+    <div class="field">
+      <%= message_form.submit "Send" %>
+    </div>
+  </fieldset>
+<% end %>
+</div>

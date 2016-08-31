@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   root "posts#index"
 
   get '/about', to: 'pages#about'
-  get '/contact', to: 'pages#contact'
+  get 'contact', to: 'messages#new', as: 'contact'
+  post 'contact', to: 'messages#create'
 end
