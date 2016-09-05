@@ -30,9 +30,7 @@
 		</ul>
 
 		
-		<% if !user_signed_in? %>
-			<p class="sign_in"><%= link_to "Admin Login", new_user_session_path %></p>
-		<% end %>
+		
 	</div>
 <div id="main_content">
 	<div id="header">
@@ -48,11 +46,17 @@
 
 
 		<% if user_signed_in? %>
-				<div class="buttons">
-					<button class="button"><%= link_to "New Post", new_post_path %></button>
-					<button class="button">Log Out</button>
-				</div>
+				<ul class="nav navbar-nav navbar">
+					<li><%= link_to "New Post", new_post_path %></li>
+					<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+				</ul>
 		<% end %>
+		<% if !user_signed_in? %>
+		<ul class="nav navbar-nav navbar">
+			<li class="sign_in"><%= link_to "Admin Login", new_user_session_path %></li>
+		</ul>
+		<% end %>
+
 	</div>
 	<% flash.each do |name, msg| %>
 			<%= content_tag(:div, msg, class: "alert") %>

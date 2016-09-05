@@ -20,6 +20,18 @@
 html, body {
 	font-family: Georgia,serif;
 }
+.navbar {
+    float: right;
+    margin: 0;
+}
+.navbar li {
+    display: inline;
+    padding: 8px;
+    border: 1px solid;
+}
+.navbar li:hover {
+    color: #cc0000;
+}
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 500;
